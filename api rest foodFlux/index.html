@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Início</title>
+    
+</head>
+<body>
+    <div class="imagem"> 
+        <!--inicio header-->
+        <header class="background" id="home">
+            <!-- inicio container-->
+            <div class="container">
+
+                <!--itens do menu superior-->
+                <nav >
+
+                    <div class="logo">
+                        <a href="index.html">FoodFlux</a>
+                    </div>
+
+                    <!--estrutura desordenada para os outros itens do menu superior-->
+                    <ul class="ul">
+                        <li> <a href="#home">  Início </a> </li>
+                        <li> <a href="#sobre">  Sobre </a> </li>
+                        <li> <a href="#parceiro">  Seja um Parceiro </a> </li>
+                        <li> <a href="#contato">  Contato </a> </li>
+                        <li> <a href="#"> <button class="botão" onclick="abrirPopup('login')">Entrar </button></a> </li>
+                    </ul>
+                    <div class="menu-icon">
+                        <img src="../assets/menuicon (2).png" alt="icone de menu">
+                    </div>
+
+                    
+                </nav>
+
+            </div>
+            <!--fim container-->
+
+        </header>
+        <!-- fim header -->
+        <!--inicio da parte do meio do site-->
+        <main>
+            <!-- inicio container-->
+            <div class="container">
+                <!--inicio do texto da main-->
+                <div class="texto-main">
+                    <h1> Rapidez que alimenta</h1>
+                    <h4>Escolha seu restaurante, faça o pedido online e retire no local — simples, rápido e sem filas</h4>
+                    <div>
+                        <button class="botão" onclick="abrirPopup('registro')"> começar </button>
+                        <li> <a href="#" class="botao-link" onclick="abrirPopupSemCadastro()">Comprar sem registro</a> </li>
+                    </div>
+                    
+                </div>
+                <!--fim do texto da main-->
+                <div class="imagem-main">
+                    <img src="../assets/logo.png" alt="logo">
+                </div>
+            </div>
+            <!-- inicio container-->
+        </main>
+        <!--fim da parte do meio do site-->
+    </div>
+    <!-- fim do background principal-->
+    <!-- POPUP LOGIN/REGISTRO -->
+    <div id="authPopup" class="popup">
+        <div class="popup-content">
+            <span class="fechar" onclick="fecharPopup()">&times;</span>
+
+            <div class="tabs">
+                <button class="tablink active" onclick="abrirAba(event, 'login')">Login</button>
+                <button class="tablink" onclick="abrirAba(event, 'registro')">Registro</button>
+            </div>
+
+            <!-- Login -->
+            <div id="login" class="tab-content ativo">
+                <form>
+                    <div class="input-group">
+                        
+                        <input type="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-group">
+                        
+                        <input type="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <label class="check">
+                        <input type="checkbox"> Lembrar minha conta
+                    </label>
+
+                    <button type="submit" class="botão botao-destaque">Login</button>  
+
+                    <div class="links">
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Registro -->
+            <div id="registro" class="tab-content">
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" placeholder="Telefone" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Senha" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Confirmar senha" required>
+                    </div>
+
+                    <button type="submit" class="botão botao-destaque">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--fim do popup-->
+    <!-- POPUP SEM CADASTRO -->
+    <div id="semCadastroPopup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <span class="fechar" onclick="fecharPopupSemCadastro()">&times;</span>
+            <h2>Comprar sem cadastro</h2>
+            <p>Você está comprando sem criar uma conta. Preencha os dados necessários para continuar.</p>
+            <form>
+                <div class="input-group">
+                    <label for="cidade">Cidade</label>
+                    <select id="cidade" name="cidade" onchange="mostrarLocal()">
+                        <option value="" selected disabled>Escolha a cidade</option>
+                        </select>
+                </div>
+                                <div class="input-group" id="local-group" style="display:none;">
+                    <label for="local">Local</label>
+                    <select id="local" name="local">
+                        <option value="" selected disabled>Escolha o local</option>
+                    </select>
+                </div>
+                <button type="submit" class="botão botao-destaque">Continuar compra</button>
+            </form>
+        </div>
+    </div>
+    
+    <section class = "parceiros">
+        <!--container-->
+        <div class="container">
+            <!--parceiros texto-->
+            <div class="parceiros-texto">
+               
+               Nossos Parceiros
+                
+            </div>
+            <!--fim parceiros texto-->
+            <div class="nome-parceiros">
+                <div class="nome-parceiros-inner">
+                
+                    <span> Instituição X</span>
+                    <span> Instituição Y</span>
+                    <span> Instituição Z</span>
+                    <span> Instituição X</span>
+                    <span> Instituição Y</span>
+                    <span> Instituição Z</span>
+                    <span> Instituição X</span>
+                    <span> Instituição Y</span>
+                    <span> Instituição Z</span>
+                    <span> Instituição X</span>
+                    <span> Instituição Y</span>
+                    <span> Instituição Z</span>
+                
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!--inicio da parte sobre nós-->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="titulo-sobre">Sobre Nós</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="../assets/sobre_nos.png" alt="sobre_nos">
+                    <h3 class="titulo">A origem do FoodFlux</h3>
+                    <p>O FoodFlux nasceu para agilizar os pedidos durante o intervalo da faculdade. 
+                    A ideia surgiu ao perceber como o tempo é curto nesse momento e como filas podem atrapalhar a experiência dos estudantes. 
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="../assets/missao.png" alt="missao">
+                    <h3 class="titulo">Missão</h3>
+                    <p>Facilitar o acesso à alimentação em ambientes acadêmicos, oferecendo uma solução rápida, prática e sem filas para pedidos de lanches e refeições.
+                    <!-- Com o FoodFlux, é possível escolher o lanche, fazer o pedido online e retirar no local, tornando o intervalo mais prático, rápido e sem estresse.  -->
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="../assets/visao.png" alt="visao">
+                    <h3 class="titulo">Visão</h3>
+                    <p>Ser a principal plataforma de pedidos online em instituições de ensino, promovendo conveniência, inovação e uma melhor experiência para estudantes e parceiros.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--fim da parte sobre nós--> 
+    <!--inicio da parte tornar parceiro--> 
+    <section class="colaborador" id="parceiro">
+        <div class="container">
+            <div class="box-colaborador">
+                <h2>Torne-se um parceiro nosso</h2>
+                <p> Cadastre o estabelecimento do seu centro de ensino e receba pedidos online. Mais praticidade para os alunos, mais organização para você.</p>
+                <form >
+                    <input type="email" placeholder="Digite seu e-mail">
+                    <button> Solicitar </button>
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+    <!--fim da parte tornar parceiro--> 
+    <!--inicio do footer-->
+    <footer id="contato">
+        <div class="container"> 
+           
+            <ul> 
+                <h3> FoodFlux </h3>
+                <p>Mais fluidez ao seu dia a dia</p>
+                <div class="redes-sociais">
+                    <img src="../assets/facebook.png" alt="facebook">
+                    <img src="../assets/instagram.png" alt="instagram">
+                    <img src="../assets/linkedin.png" alt="linkedin">
+
+                </div>
+            </ul>
+            <!--ul2 inicio-->
+            <ul>
+                <h3> Link </h3>
+                <li> <a href="#">  Início </a> </li>
+                <li> <a href="#">  Sobre </a> </li>
+                <li> <a href="#">  Seja um Parceiro </a> </li>
+                <li> <a href="#">  Contato </a> </li>
+
+            </ul>
+            <!--ul2 fim-->
+            <!--ul3 inicio-->
+            <ul> 
+                <h3> Suporte </h3>
+                <li> <a href="#">  Central de Ajuda </a> </li>
+                <li> <a href="#">  Termos de Serviço </a> </li>
+
+            </ul>
+            <!--ul3 fim-->
+            <!--ul4 inicio-->
+            <ul> 
+                <h3> Nos Contate </h3>
+                <li>
+                    <p> +55 (41) 91234-5678 </p>
+                </li>
+                <li>
+                    <p> Foodflux@gmail.com </p>
+                </li>
+                
+            </ul>
+
+        </div>
+            
+    </footer>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>

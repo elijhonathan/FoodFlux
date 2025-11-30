@@ -1,0 +1,181 @@
+Teste simples de api Postman: http://localhost:3000/teste
+
+cadastro usuario 
+
+        post raw json       
+
+        http://localhost:3000/usuarios
+
+        {
+            "nome": "João da Silva",
+            "email": "joao@exemplo.com",
+            "senha": "senha123forte",
+            "telefone": "99999-8888",
+            "tipo": "aluno"
+        }
+
+
+login de usuario
+
+        post raw json
+
+        http://localhost:3000/login
+
+        {
+            "email": "joao@exemplo.com",
+            "senha": "senha123forte"
+        }
+
+atualizar cadastro
+
+        put raw json
+
+        http://localhost:3000/usuarios/id?
+
+        {
+            "nome": "João da Silva",
+            "email": "joao@exemplo.com",
+            "senha": "senha123forte",
+            "telefone": "99999-8888",
+            "tipo": "aluno"
+        }
+
+
+localizacoes e cantinas
+
+        get 
+
+        http://localhost:3000/localizacoes
+
+        retorno:
+
+        [
+    {
+        "id_cidade": 1,
+        "nome": "Curitiba",
+        "cantinasAssociadas": [
+            {
+                "id_cantina": 1,
+                "nome": "Faculdade Senac Portão",
+                "endereco": "Rua Calixto Razolini, N° 215 - Bairro Portão - Curitiba",
+                "status": "ativo"
+            }
+        ]
+    },
+    {
+        "id_cidade": 2,
+        "nome": "São José dos Pinhais",
+        "cantinasAssociadas": [
+            {
+                "id_cantina": 2,
+                "nome": "Faculdade Senac São José dos Pinhais",
+                "endereco": "Av. Rocha Pompo, N° 3028 - Bairro Cruzeiro - São José dos Pinhais",
+                "status": "ativo"
+            }
+        ]
+    }
+]
+
+imagem site: https://pixabay.com/pt
+Cadastro de produto
+
+    post raw json
+
+    http://localhost:3000/produtos
+
+    {
+    "id_cantina": 1, 
+    "nome": "Sanduíche Natural",
+    "descricao": "Sanduíche de frango desfiado com pão integral.",
+    "preco": 12.50,
+    "estoque": 50,
+    "imagem_url": "http://link.para/sanduiche.png",
+    "categoria": "Lanches",
+    "status": "disponivel"
+    }
+
+
+Editar cadastro produto
+
+    put raw json
+
+    http://localhost:3000/produtos/id_produto
+
+    (campos que quer editar)
+    {
+    "id_cantina": 1, 
+    "nome": "Sanduíche Natural",
+    "descricao": "Sanduíche de frango desfiado com pão integral.",
+    "preco": 12.50,
+    "estoque": 50,
+    "imagem_url": "http://link.para/sanduiche.png",
+    "categoria": "Lanches",
+    "status": "disponivel"
+    }
+
+Buscar cardapio
+
+    get
+
+    http://localhost:3000/cantinas/id_cantina/produtos
+
+    {
+    "Bebidas": [
+        {
+            "id_produto": 201,
+            "id_cantina": 1,
+            "nome": "Suco de Laranja",
+            "preco": "6.00",
+            // ... outros campos
+        },
+        {
+            "id_produto": 202,
+            "id_cantina": 1,
+            "nome": "Água Mineral",
+            "preco": "3.50",
+            // ...
+        }
+    ],
+    "Salgados": [
+        {
+            "id_produto": 101,
+            "id_cantina": 1,
+            "nome": "Coxinha de Frango",
+            "preco": "7.50",
+            // ...
+        }
+    ],
+    "Doces": [
+        // ... lista de produtos doces
+    ]
+}
+
+Cliente anonimo
+
+    post raw json
+
+    http://localhost:3000/clientes-anonimos
+
+    {
+    "nome": "Visitante 42",
+    "telefone": "98765-4321"
+    }
+
+Fazer Pedido
+    post raw jason
+
+    http://localhost:3000/pedidos
+
+    {
+    "id_usuario": 1, // Ou null se for anônimo e usar id_cliente_anonimo
+    "id_cliente_anonimo": null, // Ou o ID do cliente anônimo se for um pedido sem login
+    "id_cantina": 1,
+    "valor_total": 24.00, // Preço total do pedido (deveria ser calculado no front ou aqui)
+    "itens": [
+        {
+            "id_produto": 1,
+            "quantidade": 2,
+            "preco_unitario": 12.00 // Preço do produto
+        }
+    ]
+    }

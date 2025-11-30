@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFlux - Adicionar Produto</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="sidebar">
+        <div class="user-info">
+            <div class="avatar">🏪</div>
+            <div>
+                <div class="user-name">Bella Cucina</div>
+                <div class="user-role">Fornecedor</div>
+            </div>
+        </div>
+
+        <a class="menu-item" href="../telaPrincipal/index.html">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <span>Home</span>
+        </a>
+
+        <div class="menu-item active">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"/></svg>
+            <span>Adicionar Produto</span>
+        </div>
+
+        <div class="menu-item">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            <span>Editar Produtos</span>
+        </div>
+
+        <div class="menu-item">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.89 2-2V5c0-1.1-.89-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+            <span>Estatísticas</span>
+        </div>
+
+        <div class="menu-item">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            <span>Pedidos</span>
+        </div>
+
+        <div class="settings-section">
+            <div class="menu-item">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                <span>Configurações</span>
+            </div>
+            <div class="menu-item" id="logout-btn">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                <span>Sair</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div>
+                <h1>Adicionar Novo Produto</h1>
+                <div class="header-subtitle">Cadastre um novo item no seu cardápio</div>
+            </div>
+            <div class="logo">🍔 FoodFlux</div>
+        </div>
+
+        <div class="form-container">
+            <form id="productForm">
+                <div class="form-section">
+                    <h2 class="section-title">Imagem do Produto (URL)</h2>
+                    <div class="form-group full-width">
+                        <label for="imageUrl">URL da Imagem *</label>
+                        <input type="url" id="imageUrl" placeholder="http://link.para/seu-produto.png" required>
+                        
+                        <div class="image-upload-area" id="imagePreviewArea" style="height: 150px; margin-top: 15px; border: none; padding: 0; background: #f9f9f9; display: flex; align-items: center; justify-content: center;">
+                            <img id="imagePreview" class="image-preview" src="" alt="Preview da Imagem" style="display: none; height: 100%; width: 100%; border-radius: 8px; border: 1px solid #ddd; object-fit: contain;">
+                            <span id="previewPlaceholder" style="font-size: 14px; color: #999; position: absolute;">Cole o link acima para pré-visualizar</span>
+                        </div>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <button type="button" class="remove-image" id="removeImage" style="display: none;">✕</button>
+                </div>
+
+                <div class="form-section">
+                    <h2 class="section-title">Informações Básicas</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="productName">Nome do Produto *</label>
+                            <input type="text" id="productName" placeholder="Ex: Sanduíche Natural" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="productDescription">Descrição *</label>
+                            <textarea id="productDescription" rows="4" placeholder="Descreva seu produto..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productCategory">Categoria *</label>
+                            <select id="productCategory" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="Lanches">🍔 Lanches</option>
+                                <option value="Massa">🍝 Massas</option>
+                                <option value="Saladas">🥗 Saladas</option>
+                                <option value="Sobremesas">🍰 Sobremesas</option>
+                                <option value="Bebidas">🥤 Bebidas</option>
+                                <option value="Entradas">🍤 Entradas</option>
+                                <option value="Prato-Principal">🍽️ Pratos Principais</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productPrice">Preço (R$) *</label>
+                            <input type="number" id="productPrice" placeholder="12.50" step="0.01" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="stockQuantity">Quantidade em Estoque *</label>
+                            <input type="number" id="stockQuantity" placeholder="50" min="0" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2 class="section-title">Status do Produto</h2>
+                    <div class="form-grid">
+                        <div class="form-group checkbox-group full-width">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="isAvailable" checked>
+                                <span>Produto Disponível (Para venda imediata)</span>
+                            </label>
+                        </div>
+                        </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="button" class="btn-preview" id="previewBtn">Visualizar</button>
+                    <button type="submit" class="btn-primary">Adicionar Produto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Pré-visualização do Produto</h2>
+                <button class="modal-close" id="closeModal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-card">
+                    <div class="preview-image" id="previewImageContainer">
+                        <img id="previewProductImage" alt="Preview">
+                    </div>
+                    <div class="preview-info">
+                        <h3 id="previewName">Nome do Produto</h3>
+                        <p id="previewDescription">Descrição do produto</p>
+                        <div class="preview-details">
+                            <span class="preview-price" id="previewPrice">R$ 0,00</span>
+                            <span class="preview-time" id="previewTime"></span>
+                        </div>
+                        <div class="preview-tags" id="previewTags"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
